@@ -1,3 +1,10 @@
+# FASTA Toolkit v1.0
+# Author: Abhishek 
+# Features:
+# - GC Stats
+# - ORF finder
+# - Protein translation 
+
 import glob
 from Bio import SeqIO
 from Bio.Seq import Seq
