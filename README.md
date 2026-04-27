@@ -1,7 +1,7 @@
 # FASTA Toolkit
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue)
-![Version](https://img.shields.io/badge/version-v1.1-green)
+![Version](https://img.shields.io/badge/version-v1.2-green)
 ![Bioinformatics](https://img.shields.io/badge/domain-bioinformatics-orange)
 
 Python CLI toolkit for FASTA statistics, ORF discovery, Protein translation and CSV reporting.
@@ -48,7 +48,7 @@ data/
 - Top ORFs
 - Protein preview
 - CSV report export
-- Protein length (aa)
+- Protein length reporting (aa)
 
 ## Project Structure
 ```bash
