@@ -4,13 +4,17 @@
 ![Version](https://img.shields.io/badge/version-v1.1-green)
 ![Bioinformatics](https://img.shields.io/badge/domain-bioinformatics-orange)
 
-Python CLI toolkit for FASTA statistics, ORF detection and sequence analysis.
+Python CLI toolkit for FASTA statistics, ORF discovery, Protein translation and CSV reporting.
 
 ## Features
 - GC/AT composition
 - ORF discovery
 - Protein translation preview
 - Multi-FASTA support
+- CSV export for sequence statistics
+- Longest ORF reporting (bp)
+- Protein length reporting (aa)
+
 
 ## Installation
 ```bash
@@ -43,19 +47,20 @@ data/
 - GC%
 - Top ORFs
 - Protein preview
+- CSV report export
+- Protein length (aa)
 
 ## Project Structure
 ```bash
 bio_project/
 ├── data/
-├── scripts/
 ├── fasta_stats.py
 ├── requirements.txt
 └── README.md
 ```
 
 ## Release
-Current stable release: **v1.1**
+Current stable release: **v1.2**
 
 ## Author
 Developed by **Abhishek K.**
