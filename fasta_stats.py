@@ -5,6 +5,7 @@
 # - ORF finder
 # - Protein translation 
 
+import csv
 import glob
 from Bio import SeqIO
 from Bio.Seq import Seq
@@ -85,3 +86,56 @@ for file in glob.glob("data/*.fasta"):
             print()
 
 print(f"Average GC: {sum(all_gc)/len(all_gc):.2f}%")
+
+#CSV export
+
+rows=[]
+
+for file in glob.glob("data/*.fasta"):
+    for record in SeqIO.parse(file,"fasta"):
+
+        seq=str(record.seq).upper()
+
+        A=seq.count("A")
+        T=seq.count("T")
+        G=seq.count("G")
+        C=seq.count("C")
+
+        valid=A+T+G+C
+
+        gc=(G+C)/valid*100
+        at=(A+T)/valid*100
+
+        orfs=find_all_orfs(seq)
+
+        if orfs:
+            longest=len(orfs[0])
+            protein_len=(longest//3)-1
+        else:
+            longest=0
+            protein_len=0
+
+        rows.append([
+            record.id,
+            len(seq),
+            round(gc,2),
+            round(at,2),
+            longest,
+            protein_len
+        ])
+
+with open("results.csv","w",newline="") as f:
+    writer=csv.writer(f)
+
+    writer.writerow([
+        "gene",
+        "length",
+        "gc_percent",
+        "at_percent",
+        "longest_orf_bp",
+        "protein_len_aa"
+    ])
+
+    writer.writerows(rows)
+
+print("results.csv written")
