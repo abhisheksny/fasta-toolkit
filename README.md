@@ -18,7 +18,7 @@ Python CLI toolkit for FASTA statistics, ORF discovery, Protein translation and 
 
 ## Installation
 ```bash
-git clone https://github.com/abhisheksny/bio_project.git
+git clone https://github.com/abhisheksny/fasta_toolkit.git
 cd bio_project
 pip install -r requirements.txt
 ```
